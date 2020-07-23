@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="vue.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue.js - Pimeiro Exemplo</title>
+    </head>
+    <body>
+        <div id="start">
+            {{ message }}
+        </div>
+        <script>
+            app = new Vue({
+                el: '#start',
+                data: {
+                    message: 'Hello World. Estou usando Vue!'
+                }
+            })
+        </script>
+    </body>
+</html>
