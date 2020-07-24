@@ -8,7 +8,15 @@
     <body>
         <div id="computed">
             <h2>Nome: {{ person.firstName }} {{ person.lastName }}</h2>
-            <h2>Nome completo: {{ fullName }} </h2>
+            <h2>Nome completo (Computed): {{ fullName }} </h2>
+            <h2>Nome completo (Computed): {{ fullName }} </h2>
+            <h2>Nome completo (Computed): {{ fullName }} </h2>
+            <h2>Nome completo (Computed): {{ fullName }} </h2>
+            <h2>Nome completo (Computed): {{ fullName }} </h2>
+            
+            <h2>Nome completo (Method): {{ getFullName() }} </h2>
+            <h2>Nome completo (Method): {{ getFullName() }} </h2>
+            <h2>Nome completo (Method): {{ getFullName() }} </h2>
 
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -21,8 +29,15 @@
                        lastName: 'Achou'
                    }
                 },
+                methods: {
+                    getFullName: function(){
+                        console.log('METHOD')
+                        return `${this.person.firstName} ${this.person.lastName}`
+                    }
+                },
                 computed: {
                     fullName: function(){
+                        console.log('COMPUTED')
                         return `${this.person.firstName} ${this.person.lastName}`
                     }
                 }
