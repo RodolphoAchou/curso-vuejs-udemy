@@ -3,28 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Diretivas: v-bind</title>
+        <title>Diretivas: v-model</title>
     </head>
     <body>
         <div id="directives">
-            <h2>Acesse o site abaixo</h2>
-            <!-- <a v-bind:href="url">Site do Google</a> -->
-            <a :href="url">Site do Google</a>
-            
-            <p :[arg]="value">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Asperiores, laboriosam distinctio sed molestiae illum dolorem 
-                facere consequuntur quo debitis tempora, harum tenetur natus? 
-                Perspiciatis, aut ad obcaecati velit esse iusto?</p>
-
+            <h3 v-bind:style="{ fontSize: textSize + 'px' }">Hcode Treinamentos</h3>
+            <input type="text" placeholder="Digite o tamano do texto" 
+            v-model="textSize">
+            <h4 v-bind:style="{ color: textColor}">O Vasco é o time da virada!</h4>
+            <input type="text" placeholder="Digite a cor do texto" 
+            v-model="textColor">
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script>
             let app = new Vue({
                 el: '#directives',
                 data: {
-                    url: 'http://www.google.com',
-                    arg: 'title',
-                    value: 'Parágrafo de exemplo'
+                    textSize: 30,
+                    textColor: 'red'
                 }
             })
         </script>
