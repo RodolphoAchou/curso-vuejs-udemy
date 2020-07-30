@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>Transições CSS</title>
+        <style>
+            .first-enter-active {
+                transition: opacity .5s ease;
+            }
+            .first-leave-active {
+                transition: opacity .5s ease-out;
+            }
+            .first-enter, .first-leave-to {
+                opacity: 0;
+            }
+
+            /*  */
+            .second-enter-active {
+                transition: all .3s linear;
+            }
+            .second-leave-active {
+                transition: all .5s linear;
+            }
+
+            .second-enter, .second-leave-to {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="transitions">
+            <transition name="first">
+                <h2 v-if="showH2">Hcode Treinamentos</h2>
+            </transition>
+            <hr>
+            <transition name="second">
+                <div v-if="showDiv">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti aperiam magni placeat est, sequi, expedita ut numquam delectus alias unde et. Ut eaque non porro quam numquam aliquid qui.</div>
+            </transition>    
+            <button @click="showDiv = !showDiv">Clique aqui</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '#transitions',
+                data: {
+                    showH2: true,
+                    showDiv: false
+                },
+             })
+        </script>
+    </body>
+</html>
