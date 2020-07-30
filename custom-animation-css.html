@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <title>Animações CSS Personalizadas</title>
+    </head>
+    <body>
+        <div id="transitions">
+            <transition 
+                name="animation-first"
+                enter-active-class="animate__animated animate__zoomIn"
+                leave-active-class="animate__animated animate__zoomOutDown"
+            >
+                <!-- enter-active-class="animate__animated animate__fadeInLeft"
+                leave-active-class="animate__animated animate__rotateOut" -->
+                <h2 v-if="show">Hcode Treinamentos Animações</h2>
+            </transition>
+            <button @click="show = !show">Realizar animação</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '#transitions',
+                data: {
+                    show: true
+                },
+             })
+        </script>
+    </body>
+</html>
