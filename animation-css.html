@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>Animações CSS</title>
+        <style>
+            .animation-first-enter-active {
+                animation: animation_first 1s;
+            }
+            .animation-first-leave-active {
+                animation: animation_first 1s reverse;
+            }
+            @keyframes animation_first {
+                from {
+                    background-color: #fff;
+                }
+                to {
+                    background-color: #999;
+                }
+            }
+
+            /* */
+
+            .animation-second-enter-active {
+                animation: animation_second 1s;
+            }
+            .animation-second-leave-active {
+                animation: animation_second 1.5s reverse;
+            }
+
+            @keyframes animation_second {
+                0% {
+                    background-color: #fff;
+                    font-size: 20px;
+                }
+                50% {
+                    background-color: red;
+                    font-size: 50px;
+                }
+                100% {
+                    background-color: #fff;
+                    font-size: 20px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="transitions">
+            <transition name="animation-first">
+                <h2 v-if="showH2">Hcode Treinamentos Animações</h2>
+            </transition>
+            <hr>
+            <transition name="animation-second">
+                <div v-if="showDiv">Vue.js é demais!!!</div>
+            </transition>    
+            <button @click="showDiv = !showDiv">Clique aqui</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '#transitions',
+                data: {
+                    showH2: true,
+                    showDiv: false
+                },
+             })
+        </script>
+    </body>
+</html>
