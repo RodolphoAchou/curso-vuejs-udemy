@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <title>Animações CSS - Orientação da transição</title>
+        <style>
+            .fade-transition-enter-active, .fade-transition-leave-active {
+                transition: opacity .3s ease-in-out;
+            }
+            .fade-transition-enter, .fade-transition-leave-to {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="transitions">
+            <h1>Hcode Treinamentos Animações</h1>
+            <input type="text" v-model="name">
+            <transition 
+                name="fade-transition"   
+                mode="out-in"            
+            >
+                <h3 v-if="name.length > 10" key="success" class="alert-success">Nome válido</h3>
+                <h3 v-else key="error" class="alert-danger">Nome incorreto</h3>
+            </transition>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '#transitions',
+                data: {
+                    name: ''
+                }
+             })
+        </script>
+    </body>
+</html>
