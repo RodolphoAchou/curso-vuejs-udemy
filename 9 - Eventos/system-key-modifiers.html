@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>Eventos - Modificadores de Teclas do sistema</title>
+    </head>
+    <body>
+        <div id="events">
+            <div class="container">
+                <h1>Hcode Treinamentos</h1>
+                <form action="" v-on:submit.prevent class="form">
+                    <div class="form-group">
+                        <label>Pressione as teclas abaixo</label>
+                        <input type="text" class="form-control"
+                            placeholder="Pressione Ctrl" @keydown.ctrl="exec"
+                        >
+                        <input type="text" class="form-control"
+                            placeholder="Pressione Alt" @keydown.alt="exec"
+                        >
+
+                        <input type="text" class="form-control"
+                            placeholder="Pressione Shift" @keydown.shift="exec"
+                        >
+
+                        <input type="text" class="form-control"
+                            placeholder="Pressione Windows/Command" @keydown.meta="exec"
+                        >
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            let app = new Vue({
+                el: '#events',
+                data: {
+
+                },
+                methods: {
+                    exec(e) {
+                        console.log(e.key)
+                    }
+                }
+             })
+        </script>
+    </body>
+</html>
