@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>Componentes - Local</title>
+    </head>
+    <body>
+        <div id="components">
+            <text-render text="HCode Treinamentos"></text-render>
+            <hr>
+            <list></list>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            Vue.component('text-render', {
+                props: ['text'],
+                template:`
+                    <div>
+                        <h4>{{ text }}</h4>    
+                    </div>
+                `
+            })
+            /* Component Global
+            Vue.component('list-component', {
+                template:`
+                    <ul>
+                        <li v-for="person in names">{{ person }}</li>
+                    </ul>    
+                `,
+                data: function() {
+                    return {
+                        names: ['Rodolpho', 'Bernardo', 'Pandora']
+                    }
+                }
+            })
+            */
+            let listItemComponent = {
+                props: ['name'],
+                template: `
+                    <li>{{ name }}</li>
+                `
+            }
+
+            let listComponent = {
+                template:`
+                    <ul>
+                        <list-item v-for="(person, index) in names" :name="person" :key="index"></list-item>
+                    </ul>    
+                `,
+                data: function() {
+                    return {
+                        names: ['Rodolpho', 'Bernardo', 'Pandora']
+                    }
+                },
+                components: {
+                    listItem: listItemComponent
+                }
+            }
+
+            let app = new Vue({
+                el: '#components',
+                data: {
+                    
+                },
+                components: {
+                    list: listComponent
+                }
+             })
+        </script>
+    </body>
+</html>
