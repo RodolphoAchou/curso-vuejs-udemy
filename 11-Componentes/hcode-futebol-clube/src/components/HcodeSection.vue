@@ -1,5 +1,10 @@
 <template>
     <div>
+        <div class="container">
+            <div class="row mt-5">
+                <h3>Você está vendo as noticias do: {{ championship }}</h3>
+            </div>
+        </div>
         <HcodeSectionBanner />
         <HcodeSectionNews />
     </div>
@@ -13,6 +18,9 @@ export default {
     components: {
         HcodeSectionBanner,
         HcodeSectionNews
+    },
+    props: {
+        championship: String
     }
 }
 </script>
