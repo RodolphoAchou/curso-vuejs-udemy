@@ -7,17 +7,34 @@
         </div>
         <HcodeSectionBanner />
         <HcodeSectionNews />
+        <div class="container">
+            <div class="row my-club mt-5">
+                <div class="col-6">
+                    <h2>Seu clube é: {{ myclub }}</h2>
+                </div>
+                <div class="col-6">
+                    <HcodeInput v-model="myclub"/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import HcodeSectionBanner from './HcodeSectionBanner'
 import HcodeSectionNews from './HcodeSectionNews'
+import HcodeInput from './HcodeInput'
 
 export default {
     components: {
         HcodeSectionBanner,
-        HcodeSectionNews
+        HcodeSectionNews,
+        HcodeInput
+    },
+    data() {
+        return {
+            myclub: 'Vasco da Gama'
+        }
     },
     props: {
         championship: String
