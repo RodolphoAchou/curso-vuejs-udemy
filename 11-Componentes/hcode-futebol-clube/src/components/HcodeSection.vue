@@ -5,8 +5,7 @@
                 <h3>Você está vendo as noticias do: {{ championship }}</h3>
             </div>
         </div>
-        <HcodeSectionBanner />
-        <HcodeSectionNews />
+        <component :is="currentComponent"></component>
         <div class="container">
             <div class="row my-club mt-5">
                 <div class="col-6">
@@ -33,11 +32,12 @@ export default {
     },
     data() {
         return {
-            myclub: 'Vasco da Gama'
+            myclub: 'Vasco da Gama',
         }
     },
     props: {
-        championship: String
+        championship: String,
+        currentComponent: String
     }
 }
 </script>

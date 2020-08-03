@@ -8,8 +8,8 @@
                    > Futebol clube
                </a>
                <div class="links mr-2">
-                   <a href="#" class="btn mr-5">Inicio</a>
-                   <a href="#" class="btn mr-5">Time</a>
+                   <a href="#" @click.prevent="$emit('change-component','home')" class="btn mr-5">Inicio</a>
+                   <a href="#" @click.prevent="$emit('change-component','news')" class="btn mr-5">Notícias</a>
                    <a href="#" class="btn mr-5">Classificações</a>
 
                    <select name="championship" id="select-championship" class="form-control" @change="$emit('select-championship', $event.target.value)">
