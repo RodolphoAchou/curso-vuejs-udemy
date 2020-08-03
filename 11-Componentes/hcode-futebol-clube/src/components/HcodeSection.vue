@@ -12,7 +12,7 @@
                     <h2>Seu clube é: {{ myclub }}</h2>
                 </div>
                 <div class="col-6">
-                    <HcodeInput v-model="myclub"/>
+                    <HcodeInput/>
                 </div>
             </div>
         </div>
