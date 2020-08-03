@@ -2,11 +2,8 @@
   <div id="app">
     <HcodeHeader 
       @select-championship="changeChampionship" 
-      @change-component="changeComponent" 
     />
-    <HcodeSection 
-      :current-component="currentSectionComponent" 
-    />
+    <HcodeSection/>
     <HcodeFooter />
   </div>
 </template>
@@ -26,7 +23,6 @@ export default {
   },
   data () {
     return {
-      currentSectionComponent: 'HcodeSectionBanner'
     }
   },
   methods: {
@@ -42,7 +38,7 @@ export default {
     //changeChampionship(value) {
       //this.$store.commit('setChampionship', value)
     },
-    */
+    
     changeComponent(value) {
       let component
       switch(value){
@@ -56,6 +52,7 @@ export default {
       }
       this.currentSectionComponent = component  
     }
+    */
   }
 }
 </script>
